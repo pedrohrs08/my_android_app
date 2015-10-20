@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Curriculum</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_school_info">School Info</string>
+    <string name="title_activity_general_info">General Info</string>
+</resources>
