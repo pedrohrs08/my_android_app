@@ -1,4 +1,4 @@
-package com.example.pedroresende.curriculum;
+package com.example.pedroresende.curriculum.activities.fragments;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -7,6 +7,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.pedroresende.curriculum.R;
 
 
 /**

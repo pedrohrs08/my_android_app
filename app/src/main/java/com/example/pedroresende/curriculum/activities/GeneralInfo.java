@@ -1,4 +1,4 @@
-package com.example.pedroresende.curriculum;
+package com.example.pedroresende.curriculum.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.pedroresende.curriculum.R;
 import com.example.pedroresende.curriculum.custom.intent.filters.IntentFilters;
 import com.example.pedroresende.curriculum.helpers.navigation.Navigator;
 

@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".GeneralInfo"
+            android:name=".activities.GeneralInfo"
             android:label="@string/title_activity_general_info"
             android:theme="@style/AppTheme" >
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SchoolInfo"
+            android:name=".activities.SchoolInfo"
             android:label="@string/title_activity_school_info"
             android:theme="@style/AppTheme" >
             <intent-filter>
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WorkInfo"
+            android:name=".activities.WorkInfo"
             android:label="@string/title_activity_work_info"
             android:theme="@style/AppTheme" >
             <intent-filter>

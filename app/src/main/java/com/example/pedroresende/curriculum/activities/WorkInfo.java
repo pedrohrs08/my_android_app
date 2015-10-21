@@ -1,4 +1,4 @@
-package com.example.pedroresende.curriculum;
+package com.example.pedroresende.curriculum.activities;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.pedroresende.curriculum.activities.fragments.BlankFragment;
+import com.example.pedroresende.curriculum.R;
 import com.example.pedroresende.curriculum.custom.intent.filters.IntentFilters;
 import com.example.pedroresende.curriculum.helpers.navigation.Navigator;
 
