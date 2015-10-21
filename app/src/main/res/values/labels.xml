@@ -3,4 +3,7 @@
     <string name="lblName">Nome</string>
     <string name="lblEmail">E-mail:</string>
     <string name="lblSuperiorEm">Superior em:</string>
+    <string name="graduation">Graduação</string>
+    <string name="postGraduation">Pós Graduação</string>
+    <string name="schoolInfo">School Information</string>
 </resources>

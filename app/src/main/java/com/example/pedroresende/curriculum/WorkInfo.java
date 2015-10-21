@@ -9,38 +9,38 @@ import android.widget.Button;
 import com.example.pedroresende.curriculum.custom.intent.filters.IntentFilters;
 import com.example.pedroresende.curriculum.helpers.navigation.Navigator;
 
-public class SchoolInfo extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
+public class WorkInfo extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
 
+    private Button btnSchoolInfo;
     private Button btnGeneralInfo;
-    private Button btnWorkInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_school_info);
-        initializeComponents();
+        setContentView(R.layout.activity_work_info);
+        initializeComponent();
         setEventListeners();
     }
 
-    private void setEventListeners() {
+    private void setEventListeners(){
+        btnSchoolInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Navigator.getCustomIntentWithFilter(IntentFilters.SCHOOL_INFO));
+            }
+        });
+
         btnGeneralInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(Navigator.getCustomIntentWithFilter(IntentFilters.GENERAL_INFO));
             }
         });
-
-        btnWorkInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(Navigator.getCustomIntentWithFilter(IntentFilters.WORK_INFO));
-            }
-        });
     }
 
-    private void initializeComponents() {
+    private void initializeComponent() {
         btnGeneralInfo = (Button)findViewById(R.id.btnGeneralInfo);
-        btnWorkInfo = (Button)findViewById(R.id.btnWorkInfo);
+        btnSchoolInfo = (Button)findViewById(R.id.btnSchoolInfo);
     }
 
     @Override

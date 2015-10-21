@@ -6,7 +6,7 @@
     <ImageView
         android:layout_width="131dp"
         android:layout_height="131dp"
-        android:id="@+id/imageView"
+        android:id="@+id/imgViewProfile"
         android:layout_gravity="left|top"
         android:background="@mipmap/ic_launcher" />
 
@@ -14,8 +14,8 @@
         android:layout_width="225dp"
         android:layout_height="44dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView"
+        android:text="Name"
+        android:id="@+id/lblName"
         android:layout_gravity="right|top" />
 
 </FrameLayout>
