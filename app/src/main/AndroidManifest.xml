@@ -10,11 +10,12 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".GeneralInfo"
-            android:label="@string/title_activity_school_info"
+            android:label="@string/title_activity_general_info"
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="GENERAL_INFO" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -22,6 +23,10 @@
             android:name=".SchoolInfo"
             android:label="@string/title_activity_school_info"
             android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="SCHOOL_INFO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

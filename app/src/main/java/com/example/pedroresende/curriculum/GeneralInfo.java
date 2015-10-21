@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.pedroresende.curriculum.helpers.Navigator;
+
 public class GeneralInfo extends AppCompatActivity {
 
     private TextView txtName;
@@ -32,7 +34,7 @@ public class GeneralInfo extends AppCompatActivity {
         btnSchoolInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToSchoolInfo();
+                startActivity(Navigator.navigateToSchoolInfoIntent());
             }
         });
     }
@@ -40,14 +42,9 @@ public class GeneralInfo extends AppCompatActivity {
     private void initializeComponents() {
         txtName = (TextView)findViewById(R.id.txtName);
         txtEmail = (TextView)findViewById(R.id.txtEmail);
-        txtCourse = (TextView) findViewById(R.id.txtCourse);
-        btnSchoolInfo = (Button) findViewById(R.id.btnSchoolInfo);
-        btnWorkInfo = (Button) findViewById(R.id.button2);
-    }
-
-    private void navigateToSchoolInfo(){
-        Intent intent = new Intent(this,SchoolInfo.class);
-        startActivity(intent);
+        txtCourse = (TextView)findViewById(R.id.txtCourse);
+        btnSchoolInfo = (Button)findViewById(R.id.btnSchoolInfo);
+        btnWorkInfo = (Button)findViewById(R.id.btnWorkInfo);
     }
 
     @Override
