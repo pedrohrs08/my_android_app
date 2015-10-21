@@ -33,7 +33,7 @@
         <activity
             android:name=".WorkInfo"
             android:label="@string/title_activity_work_info"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="WORK_INFO" />
 

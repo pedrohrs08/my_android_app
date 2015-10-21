@@ -4,18 +4,22 @@
     tools:context="com.example.pedroresende.curriculum.BlankFragment">
 
     <ImageView
-        android:layout_width="131dp"
-        android:layout_height="131dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imgViewProfile"
         android:layout_gravity="left|top"
-        android:background="@mipmap/ic_launcher" />
+        android:background="@mipmap/my_picture"
+        android:baseline="@dimen/abc_action_bar_default_height_material"
+        android:baselineAlignBottom="false"
+        style="@style/viewImages" />
 
     <TextView
         android:layout_width="225dp"
         android:layout_height="44dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name"
+        android:text="Pedro Henrique Resende Soares"
         android:id="@+id/lblName"
-        android:layout_gravity="right|top" />
+        android:layout_gravity="right|top"
+        style="@style/viewTitles" />
 
 </FrameLayout>

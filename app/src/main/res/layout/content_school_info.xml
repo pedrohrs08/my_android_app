@@ -11,7 +11,7 @@
     tools:context="com.example.pedroresende.curriculum.SchoolInfo"
     android:orientation="vertical">
 
-        <fragment
+    <fragment
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:name="com.example.pedroresende.curriculum.BlankFragment"
@@ -57,11 +57,29 @@
             android:text="General Info"
             android:id="@+id/btnGeneralInfo"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+        style="@style/mainButtons" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Work Information"
-        android:id="@+id/btnWorkInfo" />
+        android:id="@+id/btnWorkInfo"
+        style="@style/mainButtons" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            style="@style/mainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editInfo"
+            android:id="@+id/button"
+            android:drawableLeft="@android:drawable/ic_menu_edit"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
 </LinearLayout>
