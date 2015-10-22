@@ -20,13 +20,27 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="150dp"
-                android:id="@+id/imageView2"
-                android:background="@mipmap/my_picture"
-                style="@style/viewImages"
-                android:cropToPadding="true"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="130dp"
+                    android:id="@+id/imgProfilePicture"
+                    style="@style/viewImages"
+                    android:cropToPadding="true"
+                    android:background="@drawable/shapes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pressione para\nalterar sua foto"
+                    android:id="@+id/textView7"
+                    android:gravity="center" />
+            </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"

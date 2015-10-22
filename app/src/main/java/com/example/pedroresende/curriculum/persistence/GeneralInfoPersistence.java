@@ -13,7 +13,8 @@ public class GeneralInfoPersistence {
     private static final String NAME_KEY = "NAME";
     private static final String EMAIL_KEY = "EMAIL";
     private static final String COURSE_KEY = "COURSE";
-
+    private static final String IMAGE_URI = "IMAGE_URI"
+;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private boolean modified;
@@ -43,6 +44,11 @@ public class GeneralInfoPersistence {
         flagModified();
     }
 
+    public void putImageUrI(String imageUri){
+        editor.putString(IMAGE_URI, imageUri);
+        flagModified();
+    }
+
     public void saveInfo() {
         if (modified)
             editor.commit();
@@ -58,6 +64,10 @@ public class GeneralInfoPersistence {
 
     public String getCourse() {
         return sharedPreferences.getString(COURSE_KEY, "");
+    }
+
+    public String getImageUri(){
+        return sharedPreferences.getString(IMAGE_URI,"@mipmap/my_picture");
     }
 
     public Bundle toBundle() {
