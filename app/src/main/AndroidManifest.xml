@@ -40,6 +40,20 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.EditGeneralInfo"
+            android:label="@string/title_activity_edit_general_info"
+            android:parentActivityName=".activities.GeneralInfo"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pedroresende.curriculum.activities.GeneralInfo" />
+            <intent-filter>
+                <action android:name="GENERAL_INFO_EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

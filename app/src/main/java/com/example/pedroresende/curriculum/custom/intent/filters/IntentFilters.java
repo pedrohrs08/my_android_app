@@ -6,5 +6,6 @@ package com.example.pedroresende.curriculum.custom.intent.filters;
 public enum IntentFilters {
     GENERAL_INFO,
     SCHOOL_INFO,
-    WORK_INFO
+    WORK_INFO,
+    GENERAL_INFO_EDIT
 }
