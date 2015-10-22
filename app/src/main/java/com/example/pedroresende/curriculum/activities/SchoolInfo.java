@@ -6,12 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.pedroresende.curriculum.activities.fragments.BlankFragment;
+import com.example.pedroresende.curriculum.activities.fragments.ProfileFragment;
 import com.example.pedroresende.curriculum.R;
 import com.example.pedroresende.curriculum.custom.intent.filters.IntentFilters;
 import com.example.pedroresende.curriculum.helpers.navigation.Navigator;
 
-public class SchoolInfo extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
+public class SchoolInfo extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener {
 
     private Button btnGeneralInfo;
     private Button btnWorkInfo;

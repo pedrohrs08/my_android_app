@@ -1,17 +1,18 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pedroresende.curriculum.activities.fragments.BlankFragment">
+    tools:context="com.example.pedroresende.curriculum.activities.fragments.ProfileFragment">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="130dp"
         android:id="@+id/imgViewProfile"
         android:layout_gravity="left|top"
-        android:background="@mipmap/my_picture"
+        android:background="@drawable/shapes"
         android:baseline="@dimen/abc_action_bar_default_height_material"
         android:baselineAlignBottom="false"
-        style="@style/viewImages" />
+        style="@style/viewImages"
+        android:layout_margin="10dp" />
 
     <TextView
         android:layout_width="225dp"
@@ -22,4 +23,4 @@
         android:layout_gravity="right|top"
         style="@style/viewTitles" />
 
-</FrameLayout>
+</LinearLayout>
