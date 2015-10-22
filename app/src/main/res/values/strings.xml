@@ -9,4 +9,5 @@
     <string name="title_activity_work_info">Work Information</string>
     <string name="generalInfo">General Information</string>
     <string name="title_activity_edit_general_info">Editar Informações Gerais</string>
+    <string name="addWorkInfo">Adicionar Experiência Profissional</string>
 </resources>
