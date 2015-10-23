@@ -20,12 +20,18 @@ import com.example.pedroresende.curriculum.R;
 import com.example.pedroresende.curriculum.activities.helpers.keys.SharedBundleKeys;
 import com.example.pedroresende.curriculum.custom.intent.filters.IntentFilters;
 import com.example.pedroresende.curriculum.helpers.navigation.Navigator;
+import com.example.pedroresende.curriculum.persistence.domain.entities.WorkInformation;
+import com.example.pedroresende.curriculum.persistence.sqlite.dbhelper.CurriculumDbHelper;
+import com.example.pedroresende.curriculum.persistence.sqlite.services.WorkInformationService;
+
+import java.util.List;
 
 public class WorkInfo extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener {
 
     private Button btnSchoolInfo;
     private Button btnGeneralInfo;
     private Button btnAddWorkInfo;
+    private WorkInformationService workInformationService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,15 @@ public class WorkInfo extends AppCompatActivity implements ProfileFragment.OnFra
         setContentView(R.layout.activity_work_info);
         initializeComponent();
         setEventListeners();
+        workInformationService = new WorkInformationService(new CurriculumDbHelper(this));
+        List<WorkInformation> workInformationList = workInformationService.getAll();
+        populateInformation(workInformationList);
+    }
+
+    private void populateInformation(List<WorkInformation> workInformationList) {
+        for(WorkInformation workInformation: workInformationList){
+            createWorkInfoView(workInformation);
+        }
     }
 
     private void setEventListeners() {
@@ -69,12 +84,17 @@ public class WorkInfo extends AppCompatActivity implements ProfileFragment.OnFra
         if(resultCode == RESULT_OK) {
             Bundle bundle = data.getExtras();
             if (bundle != null) {
-                createWorkInfoView(bundle);
+                WorkInformation workInformation = new WorkInformation();
+                workInformation.setTitle(bundle.getString(SharedBundleKeys.TITLE_KEY));
+                workInformation.setDescription(bundle.getString(SharedBundleKeys.DESCRIPTION_KEY));
+                createWorkInfoView(workInformation);
+                long tableRowId = workInformationService.insert(workInformation);
+                workInformation.setId(tableRowId);
             }
         }
     }
 
-    private void createWorkInfoView(Bundle bundle) {
+    private void createWorkInfoView(WorkInformation workInformation) {
         TableRow tableRow = new TableRow(this);
         tableRow.setPadding(0, 0, 0, 10);
 
@@ -82,16 +102,16 @@ public class WorkInfo extends AppCompatActivity implements ProfileFragment.OnFra
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         TextView largetTextView = new TextView(this);
-        largetTextView.setText(bundle.getString(SharedBundleKeys.TITLE_KEY));
+        largetTextView.setText(workInformation.getTitle());
         largetTextView.setTextAppearance(this, android.R.style.TextAppearance_Large);
         largetTextView.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.bottom_border));
         linearLayout.addView(largetTextView);
 
         TextView smallTextView = new TextView(this);
-        smallTextView.setText(bundle.getString(SharedBundleKeys.DESCRIPTION_KEY));
+        smallTextView.setText(workInformation.getDescription());
         smallTextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         linearLayout.addView(smallTextView);
-
+         tableRow.setTag(workInformation.getId());
         tableRow.addView(linearLayout);
 
         ((TableLayout) findViewById(R.id.tableLayout)).addView(tableRow);
@@ -112,6 +132,8 @@ public class WorkInfo extends AppCompatActivity implements ProfileFragment.OnFra
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if(which == DialogInterface.BUTTON_POSITIVE) {
+                    long tag = (long)v.getTag();
+                    workInformationService.delete(tag);
                     ((ViewGroup) v.getParent()).removeView(v);
                 }
             }
