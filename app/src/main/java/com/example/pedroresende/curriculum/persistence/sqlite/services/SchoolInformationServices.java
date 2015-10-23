@@ -2,6 +2,7 @@ package com.example.pedroresende.curriculum.persistence.sqlite.services;
 
 import android.database.Cursor;
 
+import com.example.pedroresende.curriculum.persistence.domain.entities.SchoolInformation;
 import com.example.pedroresende.curriculum.persistence.domain.entities.WorkInformation;
 import com.example.pedroresende.curriculum.persistence.sqlite.dbhelper.CurriculumDbHelper;
 import com.example.pedroresende.curriculum.persistence.sqllite.contract.CurriculumContract;
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created by pedroresende on 10/23/15.
  */
-public class WorkInformationService extends GenericService<WorkInformation> {
+public class SchoolInformationServices extends GenericService<SchoolInformation> {
 
     private String[] projection = new String[]{
         CurriculumContract.WorkExperienceEntry._ID,
@@ -20,47 +21,46 @@ public class WorkInformationService extends GenericService<WorkInformation> {
                 CurriculumContract.WorkExperienceEntry.COLUMN_NAME_DESCRIPTION
     };;
 
-    public WorkInformationService(CurriculumDbHelper dbHelper){
+    public SchoolInformationServices(CurriculumDbHelper dbHelper){
         super(dbHelper);
     }
 
     @Override
-    public long insert(WorkInformation entity) {
+    public long insert(SchoolInformation entity) {
         return database.insert(CurriculumContract.WorkExperienceEntry.TABLE_NAME,null,entity.toContentValues());
     }
 
     @Override
-    public List<WorkInformation> getAll() {
-        Cursor cursor =  database.query(CurriculumContract.WorkExperienceEntry.TABLE_NAME, projection, null, null, null, null, null);
-        List<WorkInformation> workInformations = new ArrayList<WorkInformation>();
+    public List<SchoolInformation> getAll() {
+        Cursor cursor =  database.query(CurriculumContract.SchoolInformationEntry.TABLE_NAME, projection, null, null, null, null, null);
+        List<SchoolInformation> workInformations = new ArrayList<SchoolInformation>();
         if(cursor.moveToFirst()) {
             do {
-                WorkInformation workInformation = new WorkInformation();
-                workInformation.buildFromContentValues(cursor);
-                workInformations.add(workInformation);
+                SchoolInformation schoolInformation = new SchoolInformation();
+                schoolInformation.buildFromContentValues(cursor);
+                workInformations.add(schoolInformation);
             } while (cursor.moveToNext());
         }
         return workInformations;
     }
 
     @Override
-    public WorkInformation get(long id) {
+    public SchoolInformation get(long id) {
         String selection = CurriculumContract.WorkExperienceEntry._ID + " = ?";
         String[] selectionArgs = { String.valueOf(id) };
-        WorkInformation workInformation = null;
-        Cursor cursor =  database.query(CurriculumContract.WorkExperienceEntry.TABLE_NAME, projection, selection, selectionArgs, null, null, null);
+        SchoolInformation schoolInformation = null;
+        Cursor cursor =  database.query(CurriculumContract.SchoolInformationEntry.TABLE_NAME, projection, selection, selectionArgs, null, null, null);
         if(cursor.moveToFirst()) {
-            workInformation = new WorkInformation();
-            workInformation.buildFromContentValues(cursor);
+            schoolInformation = new SchoolInformation();
+            schoolInformation.buildFromContentValues(cursor);
         }
-        return workInformation;
+        return schoolInformation;
     }
 
     @Override
     public void delete(long id) {
         String selection = CurriculumContract.WorkExperienceEntry._ID + " = ?";
         String[] selectionArgs = { String.valueOf(id) };
-        WorkInformation workInformation = null;
-        database.delete(CurriculumContract.WorkExperienceEntry.TABLE_NAME, selection, selectionArgs);
+        database.delete(CurriculumContract.SchoolInformationEntry.TABLE_NAME, selection, selectionArgs);
     }
 }

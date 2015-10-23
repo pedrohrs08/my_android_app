@@ -12,14 +12,13 @@ import com.example.pedroresende.curriculum.persistence.sqllite.contract.Curricul
 public class CurriculumDbHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "Curriculum.db";
+    public static final String DATABASE_NAME = "Curriculumdb.db";
 
     private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA_SEP = ",";
     private static final String SQL_CREATE_WORK_ENTRIES =
             "CREATE TABLE " + WorkExperienceEntry.TABLE_NAME + " (" +
                     WorkExperienceEntry._ID + " INTEGER PRIMARY KEY," +
-                    WorkExperienceEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + COMMA_SEP +
                     WorkExperienceEntry.COLUMN_NAME_TITLE + TEXT_TYPE + COMMA_SEP +
                     WorkExperienceEntry.COLUMN_NAME_DESCRIPTION + TEXT_TYPE +
             " )";
@@ -27,7 +26,6 @@ public class CurriculumDbHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_SCHOOL_ENTRIES =
             "CREATE TABLE " + SchoolInformationEntry.TABLE_NAME + " (" +
                     SchoolInformationEntry._ID + " INTEGER PRIMARY KEY," +
-                    SchoolInformationEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + COMMA_SEP +
                     SchoolInformationEntry.COLUMN_NAME_TITLE + TEXT_TYPE + COMMA_SEP +
                     SchoolInformationEntry.COLUMN_NAME_DESCRIPTION + TEXT_TYPE +
                     " )";

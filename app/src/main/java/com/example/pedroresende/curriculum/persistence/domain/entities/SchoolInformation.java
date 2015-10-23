@@ -5,12 +5,10 @@ import android.database.Cursor;
 
 import com.example.pedroresende.curriculum.persistence.sqllite.contract.CurriculumContract;
 
-import java.util.Locale;
-
 /**
  * Created by pedroresende on 10/23/15.
  */
-public class WorkInformation implements Convertable<WorkInformation> {
+public class SchoolInformation implements Convertable<SchoolInformation> {
 
     private Long id;
     private String title;
@@ -19,17 +17,17 @@ public class WorkInformation implements Convertable<WorkInformation> {
     @Override
     public ContentValues toContentValues() {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(CurriculumContract.WorkExperienceEntry._ID,id);
-        contentValues.put(CurriculumContract.WorkExperienceEntry.COLUMN_NAME_TITLE,title);
-        contentValues.put(CurriculumContract.WorkExperienceEntry.COLUMN_NAME_DESCRIPTION,description);
+        contentValues.put(CurriculumContract.SchoolInformationEntry._ID,id);
+        contentValues.put(CurriculumContract.SchoolInformationEntry.COLUMN_NAME_TITLE,title);
+        contentValues.put(CurriculumContract.SchoolInformationEntry.COLUMN_NAME_DESCRIPTION,description);
         return contentValues;
     }
 
     @Override
-    public WorkInformation buildFromContentValues(Cursor values) {
-        id = values.getLong(values.getColumnIndexOrThrow(CurriculumContract.WorkExperienceEntry._ID));
-        title = values.getString(values.getColumnIndexOrThrow(CurriculumContract.WorkExperienceEntry.COLUMN_NAME_TITLE));
-        description = values.getString(values.getColumnIndexOrThrow(CurriculumContract.WorkExperienceEntry.COLUMN_NAME_DESCRIPTION));
+    public SchoolInformation buildFromContentValues(Cursor values) {
+        id = values.getLong(values.getColumnIndexOrThrow(CurriculumContract.SchoolInformationEntry._ID));
+        title = values.getString(values.getColumnIndexOrThrow(CurriculumContract.SchoolInformationEntry.COLUMN_NAME_TITLE));
+        description = values.getString(values.getColumnIndexOrThrow(CurriculumContract.SchoolInformationEntry.COLUMN_NAME_DESCRIPTION));
         return this;
     }
 

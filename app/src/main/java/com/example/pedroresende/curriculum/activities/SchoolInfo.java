@@ -20,12 +20,18 @@ import com.example.pedroresende.curriculum.R;
 import com.example.pedroresende.curriculum.activities.helpers.keys.SharedBundleKeys;
 import com.example.pedroresende.curriculum.custom.intent.filters.IntentFilters;
 import com.example.pedroresende.curriculum.helpers.navigation.Navigator;
+import com.example.pedroresende.curriculum.persistence.domain.entities.SchoolInformation;
+import com.example.pedroresende.curriculum.persistence.sqlite.dbhelper.CurriculumDbHelper;
+import com.example.pedroresende.curriculum.persistence.sqlite.services.SchoolInformationServices;
+
+import java.util.List;
 
 public class SchoolInfo extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener {
 
     private Button btnGeneralInfo;
     private Button btnWorkInfo;
     private Button btnAddInfo;
+    private SchoolInformationServices schoolInformationServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,13 @@ public class SchoolInfo extends AppCompatActivity implements ProfileFragment.OnF
         setContentView(R.layout.activity_school_info);
         initializeComponents();
         setEventListeners();
+        schoolInformationServices = new SchoolInformationServices(new CurriculumDbHelper(this));
+        populateInformation(schoolInformationServices.getAll());
+    }
+
+    private void populateInformation(List<SchoolInformation> schoolInformationServicesAll) {
+        for(SchoolInformation schoolInformation: schoolInformationServicesAll)
+            createWorkInfoView(schoolInformation);
     }
 
     private void setEventListeners() {
@@ -70,12 +83,17 @@ public class SchoolInfo extends AppCompatActivity implements ProfileFragment.OnF
         if(resultCode == RESULT_OK) {
             Bundle bundle = data.getExtras();
             if (bundle != null) {
-                createWorkInfoView(bundle);
+                SchoolInformation schoolInformation = new SchoolInformation();
+                schoolInformation.setTitle(bundle.getString(SharedBundleKeys.TITLE_KEY));
+                schoolInformation.setDescription(bundle.getString(SharedBundleKeys.DESCRIPTION_KEY));
+                long tableRowId = schoolInformationServices.insert(schoolInformation);
+                schoolInformation.setId(tableRowId);
+                createWorkInfoView(schoolInformation);
             }
         }
     }
 
-    private void createWorkInfoView(Bundle bundle) {
+    private void createWorkInfoView(SchoolInformation schoolInformation) {
         TableRow tableRow = new TableRow(this);
         tableRow.setPadding(0, 0, 0, 10);
 
@@ -83,16 +101,17 @@ public class SchoolInfo extends AppCompatActivity implements ProfileFragment.OnF
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         TextView largetTextView = new TextView(this);
-        largetTextView.setText(bundle.getString(SharedBundleKeys.TITLE_KEY));
+        largetTextView.setText(schoolInformation.getTitle());
         largetTextView.setTextAppearance(this, android.R.style.TextAppearance_Large);
         largetTextView.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.bottom_border));
         linearLayout.addView(largetTextView);
 
         TextView smallTextView = new TextView(this);
-        smallTextView.setText(bundle.getString(SharedBundleKeys.DESCRIPTION_KEY));
+        smallTextView.setText(schoolInformation.getDescription());
         smallTextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         linearLayout.addView(smallTextView);
 
+        tableRow.setTag(schoolInformation.getId());
         tableRow.addView(linearLayout);
 
         ((TableLayout) findViewById(R.id.tableLayout)).addView(tableRow);
@@ -113,6 +132,7 @@ public class SchoolInfo extends AppCompatActivity implements ProfileFragment.OnF
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if(which == DialogInterface.BUTTON_POSITIVE) {
+                    schoolInformationServices.delete((long)v.getTag());
                     ((ViewGroup) v.getParent()).removeView(v);
                 }
             }
