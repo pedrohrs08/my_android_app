@@ -27,7 +27,7 @@ public class SchoolInformationServices extends GenericService<SchoolInformation>
 
     @Override
     public long insert(SchoolInformation entity) {
-        return database.insert(CurriculumContract.WorkExperienceEntry.TABLE_NAME,null,entity.toContentValues());
+        return database.insert(CurriculumContract.SchoolInformationEntry.TABLE_NAME,null,entity.toContentValues());
     }
 
     @Override
@@ -59,7 +59,7 @@ public class SchoolInformationServices extends GenericService<SchoolInformation>
 
     @Override
     public void delete(long id) {
-        String selection = CurriculumContract.WorkExperienceEntry._ID + " = ?";
+        String selection = CurriculumContract.SchoolInformationEntry._ID + " = ?";
         String[] selectionArgs = { String.valueOf(id) };
         database.delete(CurriculumContract.SchoolInformationEntry.TABLE_NAME, selection, selectionArgs);
     }
