@@ -59,15 +59,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.AddWorkExperienceInfo"
+            android:name=".activities.AddExperienceInfo"
             android:label="@string/title_activity_add_work_experience_info"
             android:parentActivityName=".activities.WorkInfo"
             android:theme="@style/AppTheme" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.pedroresende.curriculum.activities.WorkInfo" />
             <intent-filter>
-                <action android:name="ADD_WORK_INFO" />
+                <action android:name="ADD_EXPERIENCE_INFO" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

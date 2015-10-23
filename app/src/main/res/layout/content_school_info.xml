@@ -6,6 +6,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_schoo_info"
     tools:context="com.example.pedroresende.curriculum.activities.SchoolInfo"
@@ -21,35 +22,56 @@
             android:layout_alignParentStart="true"
             tools:layout="@layout/fragment_blank" />
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="130dp"
+        android:id="@+id/scrollView2"
+        android:scrollbars="vertical"
+        android:visibility="visible"
+        android:verticalScrollbarPosition="right"
+        android:fillViewport="true"
+        android:minHeight="130dp" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableLayout"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Large Text"
+                        android:id="@+id/textView11"
+                        android:background="@drawable/bottom_border" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Text"
+                        android:id="@+id/textView12" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/graduation"
-        android:id="@+id/lblGraduation"
-        style="@style/viewTitles" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView4"
-        android:layout_marginBottom="10dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/postGraduation"
-        android:id="@+id/lblPostGraduation"
-        style="@style/viewTitles" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView6"
-        android:layout_marginBottom="10dp" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Aperte e segure um item para excluir"
+        android:id="@+id/textView13"
+        android:gravity="center_horizontal" />
 
     <Button
             android:layout_width="fill_parent"
@@ -75,9 +97,9 @@
             style="@style/mainButtons"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/editInfo"
-            android:id="@+id/button"
-            android:drawableLeft="@android:drawable/ic_menu_edit"
+            android:text="@string/addWorkInfo"
+            android:id="@+id/btnAddInfo"
+            android:drawableLeft="@android:drawable/ic_menu_add"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />

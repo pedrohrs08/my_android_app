@@ -8,5 +8,5 @@ public enum IntentFilters {
     SCHOOL_INFO,
     WORK_INFO,
     GENERAL_INFO_EDIT,
-    ADD_WORK_INFO
+    ADD_EXPERIENCE_INFO
 }
