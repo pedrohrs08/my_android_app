@@ -73,7 +73,7 @@
             style="@style/mainButtons"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/addWorkInfo"
+            android:text="@string/addSchoolInfo"
             android:id="@+id/btnAddInfo"
             android:drawableLeft="@android:drawable/ic_menu_add"
             android:layout_alignParentBottom="true"
