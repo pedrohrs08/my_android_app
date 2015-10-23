@@ -10,4 +10,6 @@
     <string name="generalInfo">General Information</string>
     <string name="title_activity_edit_general_info">Editar Informações Gerais</string>
     <string name="addWorkInfo">Adicionar Experiência Profissional</string>
+    <string name="title_activity_add_work_experience_info">Adicionar Experiência Profissional
+    </string>
 </resources>
