@@ -45,14 +45,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Aperte e segure um item para excluir"
+        android:text="@string/holdToDelete"
         android:id="@+id/textView13"
         android:gravity="center_horizontal" />
 
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="General Info"
+            android:text="@string/btnGeneralInfo"
             android:id="@+id/btnGeneralInfo"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -61,7 +61,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Work Information"
+        android:text="@string/btnWorkInfo"
         android:id="@+id/btnWorkInfo"
         style="@style/mainButtons" />
 

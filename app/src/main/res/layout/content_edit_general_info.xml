@@ -15,14 +15,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name"
+        android:text="@string/lblName"
         android:id="@+id/textView" />
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/txtName" />
 
@@ -30,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="E-mail"
+        android:text="@string/lblEmail"
         android:id="@+id/textView2" />
 
     <EditText
@@ -44,7 +43,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Superior em:"
+        android:text="@string/lblSuperiorEm"
         android:id="@+id/textView5" />
 
     <EditText
@@ -67,7 +66,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Save"
+                android:text="@string/btnSave"
                 android:id="@+id/btnSave"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
@@ -77,7 +76,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Cancel"
+                android:text="@string/btnCancel"
                 android:id="@+id/btnCancel"
                 style="@style/mainButtons"
                 android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel" />

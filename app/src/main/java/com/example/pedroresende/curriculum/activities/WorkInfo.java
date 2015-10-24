@@ -87,9 +87,9 @@ public class WorkInfo extends AppCompatActivity implements ProfileFragment.OnFra
                 WorkInformation workInformation = new WorkInformation();
                 workInformation.setTitle(bundle.getString(SharedBundleKeys.TITLE_KEY));
                 workInformation.setDescription(bundle.getString(SharedBundleKeys.DESCRIPTION_KEY));
-                createWorkInfoView(workInformation);
                 long tableRowId = workInformationService.insert(workInformation);
                 workInformation.setId(tableRowId);
+                createWorkInfoView(workInformation);
             }
         }
     }

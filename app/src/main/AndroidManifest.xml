@@ -7,14 +7,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/new_seo207512"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".activities.GeneralInfo"
             android:label="@string/title_activity_general_info"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="GENERAL_INFO" />
@@ -26,7 +27,8 @@
         <activity
             android:name=".activities.SchoolInfo"
             android:label="@string/title_activity_school_info"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="SCHOOL_INFO" />
 
@@ -36,7 +38,8 @@
         <activity
             android:name=".activities.WorkInfo"
             android:label="@string/title_activity_work_info"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="WORK_INFO" />
 
@@ -47,7 +50,8 @@
             android:name=".activities.EditGeneralInfo"
             android:label="@string/title_activity_edit_general_info"
             android:parentActivityName=".activities.GeneralInfo"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.pedroresende.curriculum.activities.GeneralInfo" />
@@ -62,7 +66,8 @@
             android:name=".activities.AddExperienceInfo"
             android:label="@string/title_activity_add_work_experience_info"
             android:parentActivityName=".activities.WorkInfo"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="ADD_EXPERIENCE_INFO" />
 
